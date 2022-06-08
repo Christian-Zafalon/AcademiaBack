@@ -51,7 +51,8 @@ public class AlunoController {
     public int Put(@PathVariable(value = "id") int id, @RequestBody Aluno pAluno) {
         AlunoRdn rdn = new AlunoRdn();
         if (rdn.obterPorId(id).getId() > 0) {
-            return rdn.alterar(pAluno);
+            int ret = rdn.alterar(pAluno);
+            return ret;
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "aluno não encontrado");
         }

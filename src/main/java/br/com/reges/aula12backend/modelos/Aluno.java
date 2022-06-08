@@ -13,26 +13,26 @@ public class Aluno extends Pessoa {
     }
 
      //CONSTRUTOR COM NOME, TELEFONE, EMAIL
-    public Aluno(String pNome, String pTelefone) {
-        super(pNome, pTelefone);
+    public Aluno(String pNome,String pDocumento, String pTelefone) {
+        super(pNome, pDocumento, pTelefone);
     }
 
     //CONSTRUTOR COM NOME, TELEFONE, EMAIL E PLANO E MENSALIDADE
-    public Aluno(String pNome, String pEmail, String pTelefone ,String pPlano, String pMensalidade) {
-        super(pNome, pEmail, pTelefone);
+    public Aluno(String pNome, String pEmail, String pDocumento, String pTelefone ,String pPlano, String pMensalidade) {
+        super(pNome, pEmail, pDocumento, pTelefone);
         this.plano = pPlano;
         this.mensalidade = pMensalidade;
     }
 
     //CONSTRUTOR COM NOME, TELEFONE, EMAIL, DATA DE NASCIMENTO E ENDERECO
-    public Aluno(String pNome, String pTelefone, String pEmail, String pDataNascimento, Endereco pEndereco) {
-        super(pNome, pTelefone, pEmail, pDataNascimento, pEndereco);
+    public Aluno(String pNome, String pDocumento, String pTelefone, String pEmail, String pDataNascimento, Endereco pEndereco) {
+        super(pNome, pDocumento, pTelefone, pEmail, pDataNascimento, pEndereco);
 
     }
 
     //CONSTRUTOR COMPLETO
-    public Aluno(String pNome, String pTelefone, String pEmail, String pDataNascimento, Endereco pEndereco, String pPlano, String pMensalidade) {
-        super(pNome, pTelefone, pEmail, pDataNascimento, pEndereco);//CHAMA O CONSTRUTOR DA CLASSE PAI               
+    public Aluno(String pNome, String pDocumento, String pTelefone, String pEmail, String pDataNascimento, Endereco pEndereco, String pPlano, String pMensalidade) {
+        super(pNome, pDocumento, pTelefone, pEmail, pDataNascimento, pEndereco);//CHAMA O CONSTRUTOR DA CLASSE PAI               
         this.plano = pPlano;
         this.mensalidade = pMensalidade;
 

@@ -40,9 +40,11 @@ public class AlunoRdn {
         sql.append("            ,cidade                               ");
         sql.append("            ,complemento                          ");
         sql.append("            ,numero                               ");
-        sql.append("            ,uf)                                  ");
+        sql.append("            ,uf                                  ");
+        sql.append("            ,documento)                           ");
         sql.append("        VALUES                                    ");
         sql.append("              (?                                  ");
+        sql.append("              ,?                                  ");
         sql.append("              ,?                                  ");
         sql.append("              ,?                                  ");
         sql.append("              ,?                                  ");
@@ -72,6 +74,7 @@ public class AlunoRdn {
         stmt.setString(11, aluno.getEndereco().getComplemento());
         stmt.setString(12, aluno.getEndereco().getNumero());
         stmt.setString(13, aluno.getEndereco().getUf());
+        stmt.setString(14, aluno.getDocumento());
 
         linhasAfetadas = stmt.executeUpdate();
 
@@ -105,6 +108,7 @@ public class AlunoRdn {
             str.append("        ,a.numero                      ");
             str.append("        ,a.uf                          ");
             str.append("        ,a.cidade                      ");
+            str.append("        ,a.documento                      ");
             str.append(" from alunos a                        ");
 
             //ABRE A CONEXÃO
@@ -137,6 +141,8 @@ public class AlunoRdn {
                 end.setCidade(rs.getString("cidade"));
                 end.setComplemento(rs.getString("complemento"));
                 end.setUf(rs.getString("uf"));
+                aluno.setDocumento(rs.getString("documento"));
+
                 //INCLUIR O OBJETO ENDEREÇO NA ATRIBUTO DO Aluno
                 aluno.setEndereco(end);
 
@@ -300,6 +306,7 @@ public class AlunoRdn {
             str.append("        ,a.complemento                 ");
             str.append("        ,a.numero                      ");
             str.append("        ,a.uf                          ");
+            str.append("        ,a.documento                   ");
             str.append(" from alunos a                        ");
             str.append(" where a.id_aluno = ?                ");
 
@@ -326,6 +333,7 @@ public class AlunoRdn {
                 aluno.setEmail(rs.getString("email"));
                 aluno.setPlano(rs.getString("plano"));
                 aluno.setMensalidade(rs.getString("mensalidade"));
+                aluno.setDocumento(rs.getString("documento"));
 
 
                 //POPULAR/CARREGAR OS ATRIBUTOS DO ENDEREÇO
